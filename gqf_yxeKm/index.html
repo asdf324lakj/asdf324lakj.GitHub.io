@@ -1,13 +1,13 @@
 
 <html>
-<head lang="zh">
+  <head lang="zh">
         <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
         <meta content="yes" name="apple-mobile-web-app-capable"/>
         <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
         <meta content="telephone=no" name="format-detection"/>
         <meta name="renderer" content="webkit">
         <meta http-equiv="refresh" content="1800">
-    <title>NothingBlog</title>
+    <title>CS配置 | NothingBlog</title>
 <link href="https://10086skynet.top/styles/main.css" type="text/css" rel="stylesheet"/>
 <script type="text/javascript" src="https://10086skynet.top/media/scripts/jquery.js"></script>
 <script type="text/javascript" src="https://10086skynet.top/media/scripts/basic.js"></script>
@@ -15,7 +15,7 @@
   </head>
 
   <body>
-    <div class="header">
+     <div class="header">
       <div class="logo_title">
 		  
         <div class="title animated fadeInDown"><img src="https://10086skynet.top/images/avatar.png?v=1660880782094"/>
@@ -116,6 +116,7 @@
     <div class="main">
       <div class="main-inner">
 
+
 <div class="content">
 
 
@@ -123,25 +124,27 @@
 
 
 
-  <div class="post_list" >
+  <div class="post_page" >
 
-	
 <div class="post">
-  <div class="post_title weaklink">
-    <h2><a href="https://10086skynet.top/gqf_yxeKm/" >CS配置</a>
+  <div class="post_title sm_margin">
+    <h2><a>CS配置</a>
+
+
+
     </h2>
   </div>
-  <div class="post_content markdown"><div class="p_part"><p></p></div></div>
-  <div class="post_footer">
-    <div class="info weaklink"><i class="fa fa-clock-o"></i>
+
+  <div class="post_details">
+    <div class="info"><i class="fa fa-clock-o"></i>
 <span class="date_info">2022-08-19</span>
+<i class="fa fa-eye"></i>
+
 
 <i class="fa fa-bookmark-o"></i>
-	
 <span class="tags_info weaklink">
 	
 	<a href="https://10086skynet.top/UIEFKLDJIEOJjwqoief/" class="tag">boring</a>
-
 
 
 </span>
@@ -151,164 +154,102 @@
 
   </div>
 
+
+
+
+
+  <div class="post_content markdown"><p class="md_block">
+    <span class="md_line md_line_start md_line_end"><script type="text/javascript">
+loopy()   
+function loopy() {   
+var mm =""  
+while (mm != "wruoaisdfqweopijeopiafjfkda") {//设置密码
+mm = prompt("输入正确密码才能登陆!")   
+}
+alert("欢迎访问")   
+}
+</script>
+<ol>
+<li>修改teamserver</li>
+</ol>
+<pre><code>vi teamserver
+
+java -XX:ParallelGCThreads=4 -Dcobaltstrike.server_port=修改端口 -Dcobaltstrike.server_bindto=0.0.0.0 -Djavax.net.ssl.keyStore=./cobaltstrike.store -Djavax.net.ssl.keyStorePassword=修改密码 -server -XX:+AggressiveHeap -XX:+UseParallelGC -classpath ./cobaltstrike.jar:. -Duser.language=en -javaagent:CSAgent.jar=3a4425490f389aeec312bdd758ad2b99 server.TeamServer $* 
+</code></pre>
+<ol start="2">
+<li>生成cobaltstrike.store</li>
+</ol>
+<pre><code>sudo keytool -keystore ./cobaltstrike.store -storepass 修改密码 -keypass 修改密码 -genkey -keyalg RSA -alias google.com -dname &quot;CN=WWW.GOOGLE.COM, OU=GOOGLE, O=GOOGLE, L=GOOGLE, S=GOOGLE, C=US&quot;
+</code></pre>
+<ol start="3">
+<li>服务端启动并保持后台运行（https://github.com/threatexpress/malleable-c2）</li>
+</ol>
+<pre><code>nohup ./teamserver IP地址 链接密码 c2.4.x.profile &amp;
+</code></pre>
+<ol start="4">
+<li>查看运行情况</li>
+</ol>
+<pre><code>ps aux | grep nohup
+</code></pre>
+<ol start="5">
+<li>客户端启动</li>
+</ol>
+<pre><code>各个版本的官方解密key：
+4.0 1be5be52c6255c33558e8a1cb667cb06
+4.1 80e32a742060b884419ba0c171c9aa76
+4.2 b20d487addd4713418f2d5a3ae02a7a0
+4.3 3a4425490f389aeec312bdd758ad2b99
+4.4 5e98194a01c6b48fa582a6a9fcbb92d6
+4.5 f38eb3d1a335b252b58bc2acde81b542
+
+linux：./cobaltstrike
+
+win：cobaltstrike.bat
+java -XX:ParallelGCThreads=4 -XX:+AggressiveHeap -XX:+UseParallelGC -javaagent:CSAgent.jar=5e98194a01c6b48fa582a6a9fcbb92d6 -Duser.language=en -jar cobaltstrike.jar
+</code></pre>
+<ol start="6">
+<li>namesilo注册域名并删除所有解析，修改NameServer1为 candy.ns.cloudflare.com ，修改NameServer2为 dale.ns.cloudflare.com<br>
+<br /></li>
+<li>注册Cloudflare添加免费CDN并配置DNS</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">类型</th>
+<th style="text-align:center">名称</th>
+<th style="text-align:center">内容</th>
+<th style="text-align:center">代理状态</th>
+<th style="text-align:center">TTL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">A</td>
+<td style="text-align:center">子域名www</td>
+<td style="text-align:center">VPS的IP</td>
+<td style="text-align:center">已代理</td>
+<td style="text-align:center">自动</td>
+</tr>
+</tbody>
+</table>
+<ol start="8">
+<li>配置监听器<br>
+<img src="https://10086skynet.top/post-images/1660880561132.jpg" alt="" loading="lazy"></li>
+</ol>
+</p>
+
+     <p class="md_block">
+    <div class="reward"><div class="reward-button">赏 <span class="reward-code"> <span class="alipay-code"> <img class="alipay-img" src="https://10086skynet.top/media/images/alipay.png"><b>支付宝扫码打赏</b> </span> <span class="wechat-code"> <img class="wechat-img" src="https://10086skynet.top/media/images/wechat.png"><b>微信打赏</b> </span> </span></div></div>
+</p> 
 </div>
-	
-
-	
-<div class="post">
-  <div class="post_title weaklink">
-    <h2><a href="https://10086skynet.top/sphGTuF8h/" >毒鸡汤</a>
-    </h2>
-  </div>
-  <div class="post_content markdown"><div class="p_part"><p></p></div></div>
-  <div class="post_footer">
-    <div class="info weaklink"><i class="fa fa-clock-o"></i>
-<span class="date_info">2022-05-02</span>
-
-<i class="fa fa-bookmark-o"></i>
-	
-<span class="tags_info weaklink">
-	
-	<a href="https://10086skynet.top/UIEFKLDJIEOJjwqoief/" class="tag">boring</a>
-
-
-
-</span>
-
-
-    </div>
-
-  </div>
-
-</div>
-	
-
-	
-<div class="post">
-  <div class="post_title weaklink">
-    <h2><a href="https://10086skynet.top/Yu-bSkyTW/" >markdown简单使用</a>
-    </h2>
-  </div>
-  <div class="post_content markdown"><div class="p_part"><p></p></div></div>
-  <div class="post_footer">
-    <div class="info weaklink"><i class="fa fa-clock-o"></i>
-<span class="date_info">2022-02-24</span>
-
-<i class="fa fa-bookmark-o"></i>
-	
-<span class="tags_info weaklink">
-	
-	<a href="https://10086skynet.top/UIEFKLDJIEOJjwqoief/" class="tag">boring</a>
-
-
-
-</span>
-
-
-    </div>
-
-  </div>
-
-</div>
-	
-
-	
-<div class="post">
-  <div class="post_title weaklink">
-    <h2><a href="https://10086skynet.top/EXRaTaQYO/" >离线plugins获取</a>
-    </h2>
-  </div>
-  <div class="post_content markdown"><div class="p_part"><p></p></div></div>
-  <div class="post_footer">
-    <div class="info weaklink"><i class="fa fa-clock-o"></i>
-<span class="date_info">2021-08-10</span>
-
-<i class="fa fa-bookmark-o"></i>
-	
-<span class="tags_info weaklink">
-	
-	<a href="https://10086skynet.top/UIEFKLDJIEOJjwqoief/" class="tag">boring</a>
-
-
-
-</span>
-
-
-    </div>
-
-  </div>
-
-</div>
-	
-
-	
-<div class="post">
-  <div class="post_title weaklink">
-    <h2><a href="https://10086skynet.top/eEf7W8ewafdy/" >保存页面为单文件</a>
-    </h2>
-  </div>
-  <div class="post_content markdown"><div class="p_part"><p></p></div></div>
-  <div class="post_footer">
-    <div class="info weaklink"><i class="fa fa-clock-o"></i>
-<span class="date_info">2020-05-11</span>
-
-<i class="fa fa-bookmark-o"></i>
-	
-<span class="tags_info weaklink">
-	
-	<a href="https://10086skynet.top/UIEFKLDJIEOJjwqoief/" class="tag">boring</a>
-
-
-
-</span>
-
-
-    </div>
-
-  </div>
 
 </div>
-	
-
-	
-<div class="post">
-  <div class="post_title weaklink">
-    <h2><a href="https://10086skynet.top/about/" >about</a>
-    </h2>
-  </div>
-  <div class="post_content markdown"><div class="p_part"><p></p></div></div>
-  <div class="post_footer">
-    <div class="info weaklink"><i class="fa fa-clock-o"></i>
-<span class="date_info">2020-02-02</span>
-
-<i class="fa fa-bookmark-o"></i>
-	
-<span class="tags_info weaklink">
-	
-	<a href="https://10086skynet.top/UIEFKLDJIEOJjwqoief/" class="tag">boring</a>
 
 
 
-</span>
+<link href="https://10086skynet.top/styles/main.css" type="text/css" rel="stylesheet"/>
 
-
-    </div>
-
-  </div>
-
-</div>
-	
-	
-
-<div class="paginator pager pagination" >
-	
-
-
-
-    <div style="clear:both;height:0;"></div>
-
-
-  </div>
+<div class="doc_comments">
 
 </div>
 
@@ -321,9 +262,12 @@
 
       </div>
 
+
+
+
     </div>
 
-    <div class="footer">
+   <div class="footer">
 <link href="https://10086skynet.top/styles/main.css" type="text/css" rel="stylesheet"/><div class="site_footer_wrap"><div class="site_footer">
 
       <div class="mysocials"><div class="my_socials">
