@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://10086skynet.top</id>
     <title>NothingBlog</title>
-    <updated>2022-10-27T02:02:39.544Z</updated>
+    <updated>2022-11-01T03:17:50.368Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://10086skynet.top"/>
     <link rel="self" href="https://10086skynet.top/atom.xml"/>
@@ -10,6 +10,13 @@
     <logo>https://10086skynet.top/images/avatar.png</logo>
     <icon>https://10086skynet.top/favicon.ico</icon>
     <rights>All rights reserved 2022, NothingBlog</rights>
+    <entry>
+        <title type="html"><![CDATA[常见安全设备]]></title>
+        <id>https://10086skynet.top/pd_U0KCXp/</id>
+        <link href="https://10086skynet.top/pd_U0KCXp/">
+        </link>
+        <updated>2022-11-01T02:45:19.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[应急响应工程师]]></title>
         <id>https://10086skynet.top/MSXROAjPE/</id>
