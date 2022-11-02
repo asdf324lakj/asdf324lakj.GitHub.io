@@ -18,7 +18,7 @@
      <div class="header">
       <div class="logo_title">
 		  
-        <div class="title animated fadeInDown"><img src="https://10086skynet.top/images/avatar.png?v=1667374294744"/>
+        <div class="title animated fadeInDown"><img src="https://10086skynet.top/images/avatar.png?v=1667374802587"/>
 
           <h1 title="NothingBlog" class="weaklink"><a href="/">NothingBlog</a>
 
@@ -304,60 +304,6 @@
 </blockquote>
 </li>
 <li>
-<p><strong>防火墙</strong></p>
-</li>
-</ol>
-<blockquote>
-<p>工作原理</p>
-<blockquote>
-<p>防火墙的原理是指设置在不同网络（如可信任的企业内部网和不可信的公共网）或网络安全域之间的一系列部件的组合。它是不同网络或网络安全域之间信息的唯一出入口，通过监测、限制、更改跨越防火墙的数据流，尽可能地对外部屏蔽网络内部的信息、结构和运行状况，有选择地接受外部访问。通过在网络间相互连接的设备上加载允许、禁止来自某些特定的源地址、目的地址、TCP端口号等规则，对通过设备的数据包进行检查，限制数据包进出内部网络。</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>主要功能</p>
-<blockquote>
-<p>访问控制<br>
-地址转换<br>
-流量控制<br>
-抗DDOS功能<br>
-入侵防御（下一代）<br>
-病毒防御（下一代）</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>主要部署模式</p>
-<blockquote>
-<p>桥模式</p>
-<blockquote>
-<p>桥模式也可叫作透明模式。最简单的网络由客户端和服务器组成，客户端和服务器处于同一网段。为了安全方面的考虑，在客户端和服务器之间增加了防火墙设备，对经过的流量进行安全控制。正常的客户端请求通过防火墙送达服务器，服务器将响应返回给客户端，用户不会感觉到中间设备的存在。工作在桥模式下的防火墙没有IP地址，当对网络进行扩容时无需对网络地址进行重新规划，但牺牲了路由、VPN等功能。</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>网关模式</p>
-<blockquote>
-<p>网关模式适用于内外网不在同一网段的情况，防火墙设置网关地址实现路由器的功能，为不同网段进行路由转发。网关模式相比桥模式具备更高的安全性，在进行访问控制的同时实现了安全隔离，具备了一定的私密性。</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>NAT模式</p>
-<blockquote>
-<p>NAT（Network Address Translation）地址翻译技术由防火墙对内部网络的IP地址进行地址翻译，使用防火墙的IP地址替换内部网络的源地址向外部网络发送数据；当外部网络的响应数据流量返回到防火墙后，防火墙再将目的地址替换为内部网络的源地址。NAT模式能够实现外部网络不能直接看到内部网络的IP地址，进一步增强了对内部网络的安全防护。同时，在NAT模式的网络中，内部网络可以使用私网地址，可以解决IP地址数量受限的问题。</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>如果在NAT模式的基础上需要实现外部网络访问内部网络服务的需求时，还可以使用地址/端口映射（MAP）技术，在防火墙上进行地址/端口映射配置，当外部网络用户需要访问内部服务时，防火墙将请求映射到内部服务器上；当内部服务器返回相应数据时，防火墙再将数据转发给外部网络。使用地址/端口映射技术实现了外部用户能够访问内部服务，但是外部用户无法看到内部服务器的真实地址，只能看到防火墙的地址，增强了内部服务器的安全性。</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<ol start="8">
-<li>
 <p><strong>上网行为管理</strong></p>
 <blockquote>
 <p>工作原理</p>
@@ -498,6 +444,54 @@
 <blockquote>
 <blockquote>
 <p>物理隔离的一个特征，就是内网与外网永不连接，内网和外网在同一时间最多只有一个同隔离设备建立非TCP/IP协议的数据连接。其数据传输机制是存储和转发。而使用非TCP/IP协议的原因在于，TCP/IP协议没有内在的控制机制，来支持源地址的鉴别，来证实IP从哪儿来。黑客就可以利用这个漏洞，通过侦听的方式截取数据，进行篡改。而利用非TCP/IP协议就会使得经过网闸的数据，源地址会变成网闸的接口地址，使得另一端无法探测网闸这一端的网络环境。</p>
+</blockquote>
+</blockquote>
+</li>
+<li>
+<p><strong>防火墙</strong></p>
+<blockquote>
+<p>工作原理</p>
+<blockquote>
+<p>防火墙的原理是指设置在不同网络（如可信任的企业内部网和不可信的公共网）或网络安全域之间的一系列部件的组合。它是不同网络或网络安全域之间信息的唯一出入口，通过监测、限制、更改跨越防火墙的数据流，尽可能地对外部屏蔽网络内部的信息、结构和运行状况，有选择地接受外部访问。通过在网络间相互连接的设备上加载允许、禁止来自某些特定的源地址、目的地址、TCP端口号等规则，对通过设备的数据包进行检查，限制数据包进出内部网络。<br>
+主要功能<br>
+访问控制<br>
+地址转换<br>
+流量控制<br>
+抗DDOS功能<br>
+入侵防御（下一代）<br>
+病毒防御（下一代）</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>主要部署模式</p>
+<blockquote>
+<p>桥模式</p>
+<blockquote>
+<p>桥模式也可叫作透明模式。最简单的网络由客户端和服务器组成，客户端和服务器处于同一网段。为了安全方面的考虑，在客户端和服务器之间增加了防火墙设备，对经过的流量进行安全控制。正常的客户端请求通过防火墙送达服务器，服务器将响应返回给客户端，用户不会感觉到中间设备的存在。工作在桥模式下的防火墙没有IP地址，当对网络进行扩容时无需对网络地址进行重新规划，但牺牲了路由、VPN等功能。</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>网关模式</p>
+<blockquote>
+<p>网关模式适用于内外网不在同一网段的情况，防火墙设置网关地址实现路由器的功能，为不同网段进行路由转发。网关模式相比桥模式具备更高的安全性，在进行访问控制的同时实现了安全隔离，具备了一定的私密性。</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>NAT模式</p>
+<blockquote>
+<p>NAT（Network Address Translation）地址翻译技术由防火墙对内部网络的IP地址进行地址翻译，使用防火墙的IP地址替换内部网络的源地址向外部网络发送数据；当外部网络的响应数据流量返回到防火墙后，防火墙再将目的地址替换为内部网络的源地址。NAT模式能够实现外部网络不能直接看到内部网络的IP地址，进一步增强了对内部网络的安全防护。同时，在NAT模式的网络中，内部网络可以使用私网地址，可以解决IP地址数量受限的问题。</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>如果在NAT模式的基础上需要实现外部网络访问内部网络服务的需求时，还可以使用地址/端口映射（MAP）技术，在防火墙上进行地址/端口映射配置，当外部网络用户需要访问内部服务时，防火墙将请求映射到内部服务器上；当内部服务器返回相应数据时，防火墙再将数据转发给外部网络。使用地址/端口映射技术实现了外部用户能够访问内部服务，但是外部用户无法看到内部服务器的真实地址，只能看到防火墙的地址，增强了内部服务器的安全性。</p>
+</blockquote>
 </blockquote>
 </blockquote>
 </li>
