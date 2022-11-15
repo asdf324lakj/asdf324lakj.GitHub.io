@@ -7,7 +7,7 @@
         <meta content="telephone=no" name="format-detection"/>
         <meta name="renderer" content="webkit">
         <meta http-equiv="refresh" content="1800">
-    <title>CS配置 | NothingBlog</title>
+    <title>PMP | NothingBlog</title>
 <link href="https://10086skynet.top/styles/main.css" type="text/css" rel="stylesheet"/>
 <script type="text/javascript" src="https://10086skynet.top/media/scripts/jquery.js"></script>
 <script type="text/javascript" src="https://10086skynet.top/media/scripts/basic.js"></script>
@@ -128,7 +128,7 @@
 
 <div class="post">
   <div class="post_title sm_margin">
-    <h2><a>CS配置</a>
+    <h2><a>PMP</a>
 
 
 
@@ -137,7 +137,7 @@
 
   <div class="post_details">
     <div class="info"><i class="fa fa-clock-o"></i>
-<span class="date_info">2022-08-19</span>
+<span class="date_info">2022-11-12</span>
 <i class="fa fa-eye"></i>
 
 
@@ -159,93 +159,7 @@
 
 
   <div class="post_content markdown"><p class="md_block">
-    <span class="md_line md_line_start md_line_end"><script type="text/javascript">
-loopy()   
-function loopy() {
-var go =""  
-while (go != "wruoaisdfqweopijeopiafjfkda"){
-go = prompt("guess")   
-}
-alert("200")   
-}
-</script>
-<p>cs官网更新查看地址:<br>
-cobaltstrike.com/releasenotes.txt<br>
-<br /><br>
-查看CDN地址:<br>
-nslookup 域名/子域名<br>
-<br /><br>
-流量混淆profile:<br>
-https://github.com/rsmudge/Malleable-C2-Profiles<br>
-<br /></p>
-<ol>
-<li>修改teamserver</li>
-</ol>
-<pre><code>vi teamserver
-
-java -XX:ParallelGCThreads=4 -Dcobaltstrike.server_port=修改端口 -Dcobaltstrike.server_bindto=0.0.0.0 -Djavax.net.ssl.keyStore=./cobaltstrike.store -Djavax.net.ssl.keyStorePassword=修改密码 -server -XX:+AggressiveHeap -XX:+UseParallelGC -classpath ./cobaltstrike.jar:. -Duser.language=en -javaagent:CSAgent.jar=3a4425490f389aeec312bdd758ad2b99 server.TeamServer $* 
-</code></pre>
-<ol start="2">
-<li>生成cobaltstrike.store</li>
-</ol>
-<pre><code>sudo keytool -keystore ./cobaltstrike.store -storepass 修改密码 -keypass 修改密码 -genkey -keyalg RSA -alias google.com -dname &quot;CN=WWW.GOOGLE.COM, OU=GOOGLE, O=GOOGLE, L=GOOGLE, S=GOOGLE, C=US&quot;
-</code></pre>
-<ol start="3">
-<li>服务端启动并保持后台运行（https://github.com/threatexpress/malleable-c2）</li>
-</ol>
-<pre><code>nohup ./teamserver IP地址 链接密码 ./c2.4.x.profile &amp;
-</code></pre>
-<ol start="4">
-<li>查看运行情况</li>
-</ol>
-<pre><code>ps aux | grep nohup
-</code></pre>
-<ol start="5">
-<li>客户端启动</li>
-</ol>
-<pre><code>各个版本的官方解密key：
-4.0 1be5be52c6255c33558e8a1cb667cb06
-4.1 80e32a742060b884419ba0c171c9aa76
-4.2 b20d487addd4713418f2d5a3ae02a7a0
-4.3 3a4425490f389aeec312bdd758ad2b99
-4.4 5e98194a01c6b48fa582a6a9fcbb92d6
-4.5 f38eb3d1a335b252b58bc2acde81b542
-4.7 5cc4e4df156579cbd01a09dd4c1daca513113f771cb5034a22c1e1dfb3ba424b
-
-linux：./cobaltstrike
-
-win：cobaltstrike.bat
-java -XX:ParallelGCThreads=4 -XX:+AggressiveHeap -XX:+UseParallelGC -javaagent:CSAgent.jar=5e98194a01c6b48fa582a6a9fcbb92d6 -Duser.language=en -jar cobaltstrike.jar
-</code></pre>
-<ol start="6">
-<li>namesilo注册域名并删除所有解析，修改NameServer1为 candy.ns.cloudflare.com ，修改NameServer2为 dale.ns.cloudflare.com<br>
-<br /></li>
-<li>注册Cloudflare添加免费CDN并配置DNS</li>
-</ol>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">类型</th>
-<th style="text-align:center">名称</th>
-<th style="text-align:center">内容</th>
-<th style="text-align:center">代理状态</th>
-<th style="text-align:center">TTL</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">A</td>
-<td style="text-align:center">子域名www</td>
-<td style="text-align:center">VPS的IP</td>
-<td style="text-align:center">已代理</td>
-<td style="text-align:center">自动</td>
-</tr>
-</tbody>
-</table>
-<ol start="8">
-<li>配置监听器<br>
-<img src="https://10086skynet.top/post-images/1660880561132.jpg" alt="" loading="lazy"></li>
-</ol>
+    <span class="md_line md_line_start md_line_end"><p>1</p>
 </p>
 
      <p class="md_block">

@@ -7,7 +7,7 @@
         <meta content="telephone=no" name="format-detection"/>
         <meta name="renderer" content="webkit">
         <meta http-equiv="refresh" content="1800">
-    <title>CS配置 | NothingBlog</title>
+    <title>等保 | NothingBlog</title>
 <link href="https://10086skynet.top/styles/main.css" type="text/css" rel="stylesheet"/>
 <script type="text/javascript" src="https://10086skynet.top/media/scripts/jquery.js"></script>
 <script type="text/javascript" src="https://10086skynet.top/media/scripts/basic.js"></script>
@@ -128,7 +128,7 @@
 
 <div class="post">
   <div class="post_title sm_margin">
-    <h2><a>CS配置</a>
+    <h2><a>等保</a>
 
 
 
@@ -137,7 +137,7 @@
 
   <div class="post_details">
     <div class="info"><i class="fa fa-clock-o"></i>
-<span class="date_info">2022-08-19</span>
+<span class="date_info">2022-11-15</span>
 <i class="fa fa-eye"></i>
 
 
@@ -159,92 +159,191 @@
 
 
   <div class="post_content markdown"><p class="md_block">
-    <span class="md_line md_line_start md_line_end"><script type="text/javascript">
-loopy()   
-function loopy() {
-var go =""  
-while (go != "wruoaisdfqweopijeopiafjfkda"){
-go = prompt("guess")   
-}
-alert("200")   
-}
-</script>
-<p>cs官网更新查看地址:<br>
-cobaltstrike.com/releasenotes.txt<br>
-<br /><br>
-查看CDN地址:<br>
-nslookup 域名/子域名<br>
-<br /><br>
-流量混淆profile:<br>
-https://github.com/rsmudge/Malleable-C2-Profiles<br>
-<br /></p>
-<ol>
-<li>修改teamserver</li>
-</ol>
-<pre><code>vi teamserver
-
-java -XX:ParallelGCThreads=4 -Dcobaltstrike.server_port=修改端口 -Dcobaltstrike.server_bindto=0.0.0.0 -Djavax.net.ssl.keyStore=./cobaltstrike.store -Djavax.net.ssl.keyStorePassword=修改密码 -server -XX:+AggressiveHeap -XX:+UseParallelGC -classpath ./cobaltstrike.jar:. -Duser.language=en -javaagent:CSAgent.jar=3a4425490f389aeec312bdd758ad2b99 server.TeamServer $* 
-</code></pre>
-<ol start="2">
-<li>生成cobaltstrike.store</li>
-</ol>
-<pre><code>sudo keytool -keystore ./cobaltstrike.store -storepass 修改密码 -keypass 修改密码 -genkey -keyalg RSA -alias google.com -dname &quot;CN=WWW.GOOGLE.COM, OU=GOOGLE, O=GOOGLE, L=GOOGLE, S=GOOGLE, C=US&quot;
-</code></pre>
-<ol start="3">
-<li>服务端启动并保持后台运行（https://github.com/threatexpress/malleable-c2）</li>
-</ol>
-<pre><code>nohup ./teamserver IP地址 链接密码 ./c2.4.x.profile &amp;
-</code></pre>
-<ol start="4">
-<li>查看运行情况</li>
-</ol>
-<pre><code>ps aux | grep nohup
-</code></pre>
-<ol start="5">
-<li>客户端启动</li>
-</ol>
-<pre><code>各个版本的官方解密key：
-4.0 1be5be52c6255c33558e8a1cb667cb06
-4.1 80e32a742060b884419ba0c171c9aa76
-4.2 b20d487addd4713418f2d5a3ae02a7a0
-4.3 3a4425490f389aeec312bdd758ad2b99
-4.4 5e98194a01c6b48fa582a6a9fcbb92d6
-4.5 f38eb3d1a335b252b58bc2acde81b542
-4.7 5cc4e4df156579cbd01a09dd4c1daca513113f771cb5034a22c1e1dfb3ba424b
-
-linux：./cobaltstrike
-
-win：cobaltstrike.bat
-java -XX:ParallelGCThreads=4 -XX:+AggressiveHeap -XX:+UseParallelGC -javaagent:CSAgent.jar=5e98194a01c6b48fa582a6a9fcbb92d6 -Duser.language=en -jar cobaltstrike.jar
-</code></pre>
-<ol start="6">
-<li>namesilo注册域名并删除所有解析，修改NameServer1为 candy.ns.cloudflare.com ，修改NameServer2为 dale.ns.cloudflare.com<br>
-<br /></li>
-<li>注册Cloudflare添加免费CDN并配置DNS</li>
-</ol>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">类型</th>
-<th style="text-align:center">名称</th>
-<th style="text-align:center">内容</th>
-<th style="text-align:center">代理状态</th>
-<th style="text-align:center">TTL</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">A</td>
-<td style="text-align:center">子域名www</td>
-<td style="text-align:center">VPS的IP</td>
-<td style="text-align:center">已代理</td>
-<td style="text-align:center">自动</td>
-</tr>
-</tbody>
-</table>
-<ol start="8">
-<li>配置监听器<br>
-<img src="https://10086skynet.top/post-images/1660880561132.jpg" alt="" loading="lazy"></li>
+    <span class="md_line md_line_start md_line_end"><ol>
+<li>
+<p>**安全物理环境 **<br>
+1.1 物理位置选择<br>
+1.2 物理访问控制<br>
+1.3  防盗窃和防破坏<br>
+1.4  防雷击<br>
+1.5  防火<br>
+1.6  防水和防潮<br>
+1.7  防静电<br>
+1.8  温湿度控制<br>
+1.9  电力供应<br>
+1.10  电磁防护</p>
+</li>
+<li>
+<p><strong>安全通信网络</strong><br>
+2.1 网络架构<br>
+2.2 通信传输<br>
+2.3 可信验证</p>
+</li>
+<li>
+<p><strong>安全区域边界</strong><br>
+3.1 边界防护<br>
+3.2 访问控制<br>
+3.3 入侵防范<br>
+3.4 恶意代码和垃圾邮件防范<br>
+3.5 安全审计<br>
+3.6 可信验证</p>
+</li>
+<li>
+<p><strong>安全计算环境</strong><br>
+4.1 网络设备<br>
+4.1.1 路由器<br>
+4.1.2 交换机<br>
+4.2 安全设备<br>
+4.2.1 防火墙<br>
+4.3  服务器<br>
+4.3.1 Linux 服务器<br>
+4.3.2 Windows 服务器<br>
+4.4 终端设备<br>
+4.5 数据库<br>
+4.5.1 Oracle<br>
+4.5.2 MySQL<br>
+4.6  应用系统<br>
+4.7 数据<br>
+4.7.1 鉴别数据<br>
+4.7.2 重要业务数据<br>
+4.7.3 重要审计数据<br>
+4.7.4 主要配置数据<br>
+4.7.5 重要个人信息</p>
+</li>
+<li>
+<p><strong>安全管理中心</strong><br>
+5.1 系统管理<br>
+5.2 审计管理<br>
+5.3 安全管理<br>
+5.4 集中管控</p>
+</li>
+<li>
+<p><strong>安全管理制度</strong><br>
+6.1 安全策略<br>
+6.2 管理制度<br>
+6.3 制定和发布<br>
+6.4 评审和修订</p>
+</li>
+<li>
+<p><strong>安全管理机构</strong><br>
+7.1 岗位设置<br>
+7.2 人员配备<br>
+7.3 授权和审批<br>
+7.4 沟通和合作<br>
+7.5 审核和检查</p>
+</li>
+<li>
+<p><strong>安全管理人员</strong><br>
+8.1 人员录用<br>
+8.2 人员离岗<br>
+8.3 安全意识教育和培训<br>
+8.4 外部人员访问管理</p>
+</li>
+<li>
+<p><strong>安全建设管理</strong><br>
+9.1 定级和备案<br>
+9.2 安全方案设计<br>
+9.3 安全产品采购和使用<br>
+9.4 自行软件开发<br>
+9.5 外包软件开发<br>
+9.6 工程实施<br>
+9.7 测试验收<br>
+9.8 系统交付<br>
+9.9 等级测评<br>
+9.10 服务供应商管理</p>
+</li>
+<li>
+<p><strong>安全运维管理</strong><br>
+10.1 环境管理<br>
+10.2 资产管理<br>
+10.3 介质管理<br>
+10.4 设备维护管理<br>
+10.5 漏洞和风险管理<br>
+10.6 网络和系统安全管理<br>
+10.7 恶意代码防范管理<br>
+10.8 配置管理<br>
+10.9 密码管理<br>
+10.10 变更管理<br>
+10.11 备份与恢复管理<br>
+10.12 安全事件处置<br>
+10.13 应急预案管理<br>
+10.14 外包运维管理</p>
+</li>
+<li>
+<p><strong>云计算安全扩展要求</strong><br>
+11.1 安全物理环境<br>
+11.1.1 基础设施位置<br>
+11.2 安全通信网络<br>
+11.2.1 网络架构<br>
+11.3 安全区域边界<br>
+11.3.1 访问控制<br>
+11.3.2 入侵防范<br>
+11.3.3 安全审计<br>
+11.4 安全计算环境<br>
+11.4.1 身份鉴别<br>
+11.4.2 访问控制<br>
+11.4.3 入侵防范<br>
+11.4.4 镜像和快照保护<br>
+11.4.5 数据完整性和保密性<br>
+11.4.6 数据备份恢复<br>
+11.4.7 剩余信息保护<br>
+11.5 安全管理中心<br>
+11.5.1 安全管理<br>
+11.6 安全建设管理<br>
+11.6.1 云服务商选择<br>
+11.6.2 供应链管理<br>
+11.7 安全运维管理<br>
+11.7.1 云计算环境管理</p>
+</li>
+<li>
+<p><strong>移动互联安全扩展要求</strong><br>
+12.1 安全物理环境<br>
+12.1.1 无线接入点的物理位置<br>
+12.2 安全区域边界<br>
+12.2.1 边界防护<br>
+12.2.2 访问控制<br>
+12.2.3 入侵防范<br>
+12.3 安全计算环境<br>
+12.3.1 移动终端管控<br>
+12.3.2 移动应用管控<br>
+12.4 安全建设管理<br>
+12.4.1 移动应用软件采购<br>
+12.4.2 移动应用软件开发<br>
+12.5 安全运维管理<br>
+12.5.1 配置管理</p>
+</li>
+<li>
+<p><strong>物联网安全扩展要求</strong><br>
+13.1 安全物理环境<br>
+13.1.1 感知节点设备物理防护<br>
+13.2 安全区域边界<br>
+13.2.1 接入控制<br>
+13.2.2 入侵防范<br>
+13.3 安全计算环境<br>
+13.3.1 感知节点设备安全<br>
+13.3.2 网关节点设备安全<br>
+13.3.3 抗数据重放<br>
+13.3.4 数据融合处理<br>
+13.4 安全运维管理<br>
+13.4.1 感知节点管理</p>
+</li>
+<li>
+<p><strong>工业控制系统安全扩展要求</strong><br>
+14.1 安全物理环境<br>
+14.1.1 室外控制设备物理防护<br>
+14.2 安全通信网络<br>
+14.2.1 网络架构<br>
+14.2.2 通信传输<br>
+14.3 安全区域边界<br>
+14.3.1 访问控制<br>
+14.3.2 拨号使用控制<br>
+14.3.3 无线使用控制<br>
+14.4 安全计算环境<br>
+14.4.1 控制设备安全<br>
+14.5 安全建设管理<br>
+14.5.1 产品采购和使用<br>
+14.5.2 外包软件开发</p>
+</li>
 </ol>
 </p>
 
