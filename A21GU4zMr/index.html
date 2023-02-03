@@ -7,7 +7,7 @@
         <meta content="telephone=no" name="format-detection"/>
         <meta name="renderer" content="webkit">
         <meta http-equiv="refresh" content="1800">
-    <title>about | NothingBlog</title>
+    <title>安全运维 | NothingBlog</title>
 <link href="https://10086skynet.top/styles/main.css" type="text/css" rel="stylesheet"/>
 <script type="text/javascript" src="https://10086skynet.top/media/scripts/jquery.js"></script>
 <script type="text/javascript" src="https://10086skynet.top/media/scripts/basic.js"></script>
@@ -128,7 +128,7 @@
 
 <div class="post">
   <div class="post_title sm_margin">
-    <h2><a>about</a>
+    <h2><a>安全运维</a>
 
 
 
@@ -137,7 +137,7 @@
 
   <div class="post_details">
     <div class="info"><i class="fa fa-clock-o"></i>
-<span class="date_info">2020-02-02</span>
+<span class="date_info">2023-01-26</span>
 <i class="fa fa-eye"></i>
 
 
@@ -159,14 +159,153 @@
 
 
   <div class="post_content markdown"><p class="md_block">
-    <span class="md_line md_line_start md_line_end"><blockquote>
-<p>WelcomeToMyBlog！🤝</p>
-</blockquote>
-<h2 id="404">⛹ 404</h2>
-<h2 id="404-2">⛹ 404</h2>
-<h2 id="404-3">⛹ 404</h2>
-<h2 id="404-4">📬 404</h2>
-<figure data-type="image" tabindex="1"><img src="https://10086skynet.top/post-images/ueditor.jpg" alt="" loading="lazy"></figure>
+    <span class="md_line md_line_start md_line_end"><script type="text/javascript">
+loopy()   
+function loopy() {
+var go =""  
+while (go != ""){
+go = prompt("guess")   
+}
+alert("200")   
+}
+</script>
+<p>- <strong>aa</strong></p>
+<ul>
+<li>aa</li>
+<li>aa</li>
+</ul>
+<p>- <strong>kali2022开启蓝牙</strong></p>
+<ul>
+<li>sudo service bluetooth start</li>
+</ul>
+<p>- <strong>请各位小伙伴们，详细阅读公司网络使用注意事项。</strong></p>
+<ul>
+<li>近期服务部开展公司网络安全隐患检查，下列操作请注意。<br>
+1.公司电脑主机需要8位以上复杂登陆密码，不得私自插入U盘，有需求请上报批准。<br>
+2.不得利用公司电脑私自开启wifi热点分享，密码等信息不得发给非工作人员，有需求请上报批准。<br>
+3.禁止浏览赌博和色情网站，有需求请上报批准。<br>
+4.禁止私自搭建VPN及隧道通向公司外部，或者从公司外连接到工作电脑，不能安装来历不明的程序，有需求请上报批准。<br>
+5.电脑应该开启防火墙，及时更新系统补丁。<br>
+6.个人离开电脑应该锁屏。</li>
+</ul>
+<p>- <strong>centos 7.9在线安装docker</strong></p>
+<ul>
+<li>curl -fsSL https://get.docker.com | bash -s docker --mirror aliyun</li>
+<li>sudo yum install docker</li>
+<li>sudo systemctl start docker</li>
+<li>sudo systemctl enable docker</li>
+<li>docker version</li>
+<li>docker images</li>
+<li>docker ps -a</li>
+<li>docker update --restart=always ID</li>
+</ul>
+<p>- <strong>centos 7.9离线安装docker</strong></p>
+<ul>
+<li>wget --no-check-certificate https://link.storjshare.io/s/juljeuqy6xuu37krtgskmuvw73aq/ydisk/offline-setup-docker-centos7.9.tar.gz?download=1 -O offline-setup-docker-centos7.9.tar.gz</li>
+<li>tar -zxvf offline-setup-docker-centos7.9.tar.gz</li>
+<li>yum localinstall ./文件夹名/*.rpm</li>
+</ul>
+<p>- <strong>centos 7.9启动docker并设置开机启动</strong></p>
+<ul>
+<li>systemctl enable docker.service</li>
+<li>systemctl start docker.service</li>
+</ul>
+<p>- <strong>centos 7.9离线安装python3</strong></p>
+<ul>
+<li>wget --no-check-certificate https://link.storjshare.io/s/jwrjcsg2xushuxpkz5eyuqs7ijeq/ydisk/offline-setup-python3-centos7.9.tar.gz?download=1 -O offline-setup-python3-centos7.9.tar.gz</li>
+<li>tar -zxvf offline-setup-python3-centos7.9.tar.gz</li>
+<li>yum localinstall ./文件夹名/*.rpm</li>
+</ul>
+<p>- <strong>centos 7.9防火墙开端口</strong></p>
+<ul>
+<li>sudo firewall-cmd --zone=public --add-port=80/tcp --permanent</li>
+<li>sudo firewall-cmd --reload</li>
+<li>sudo firewall-cmd --list-ports</li>
+</ul>
+<p>- <strong>centos7.9安装kvm</strong></p>
+<ul>
+<li>lscpu | grep Virtualization</li>
+<li>sudo yum install @virt</li>
+<li>sudo yum install virt-top libguestfs-tools  virt-install virt-viewer</li>
+<li>yum -y install qemu-kvm libvirt virt-install bridge-utils</li>
+<li>sudo yum -y install virt-manager</li>
+<li>sudo systemctl start libvirtd.service</li>
+<li>sudo systemctl enable libvirtd.service</li>
+<li>yum install cockpit</li>
+<li>systemctl enable --now cockpit.socket</li>
+<li>yum install cockpit-machines</li>
+<li>yum install -y cockpit-docker</li>
+<li>yum install -y cockpit-kubernetes</li>
+<li>yum install -y cockpit-storaged</li>
+<li>systemctl enable --now cockpit.socket</li>
+</ul>
+<p>- <strong>kvm完整克隆并设置开机启动</strong></p>
+<ul>
+<li>virsh list --all</li>
+<li>virt-clone --auto-clone -o name -n new_name</li>
+<li>virsh autostart name</li>
+</ul>
+<p>- <strong>kvm导入 完整克隆</strong></p>
+<ul>
+<li>xml文件和qcow2文件 都放到home目录下</li>
+<li>virsh define --file /home/name.xml</li>
+</ul>
+<p>- <strong>centos 7.9配置静态ip</strong></p>
+<ul>
+<li>vi /etc/sysconfig/network-scripts/ifcfg-eth0</li>
+<li>BOOTPROTO=&quot;static&quot;<br>
+DNBOOT=yes<br>
+IPADDR=192.168.1.2<br>
+NETMASK=255.255.255.0<br>
+GATEWAY=192.168.1.1<br>
+DNS1=114.114.114.114</li>
+<li>service network restart</li>
+</ul>
+<p>- <strong>centos7.9安装系统命令</strong></p>
+<ul>
+<li>yum -y install wget</li>
+<li>yum install net-tools.x86_64</li>
+<li>yum install -y lrzsz</li>
+</ul>
+<p>- <strong>悦库网盘</strong></p>
+<ul>
+<li>wget https://pkg.aimicloud.com/ydisks_docker_x64.tar.gz</li>
+<li>tar -zxvf ydisks_docker_x64.tar.gz</li>
+<li>cd ydisks</li>
+<li>sudo chmod 744 setup.py</li>
+<li>sudo ./setup.py</li>
+<li>https://ydisk.cn/docs/#/md/deploy/linux</li>
+</ul>
+<p>- <strong>centos7.9 npc穿透内网</strong></p>
+<ul>
+<li>wget https://github.com/ehang-io/nps/releases/download/v0.26.10/linux_amd64_client.tar.gz</li>
+<li>tar -zxvf linux_amd64_client.tar.gz</li>
+<li>nohup ./npc -server=ip:port -vkey=XXX -type=tcp &amp;</li>
+<li>systemctl enable npc</li>
+</ul>
+<p>- <strong>centos7.9挂载磁盘</strong></p>
+<ul>
+<li>fdisk -l</li>
+<li>df -TH</li>
+<li>umount /dev/vdb</li>
+<li>mount /dev/vdb /home/</li>
+</ul>
+<p>- <strong>Ubuntu 18.04.6部署Rocket.Chat</strong></p>
+<ul>
+<li>lsb_release -a</li>
+<li>systemctl status snapd.service</li>
+<li>snap install core</li>
+<li>snap install rocketchat-server</li>
+<li>sudo systemctl restart snap.rocketchat-server.rocketchat-server.service</li>
+<li>sudo systemctl restart snap.rocketchat-server.rocketchat-caddy.service</li>
+<li>sudo service snap.rocketchat-server.rocketchat-server status</li>
+<li>systemctl enable rocketchat.service</li>
+<li>systemctl start rocketchat.service</li>
+<li>systemctl enable mongod.service</li>
+<li>sudo ufw status</li>
+<li>systemctl stop snapd.service</li>
+<li>systemctl disable snapd.service</li>
+</ul>
 </p>
 
      <p class="md_block">
