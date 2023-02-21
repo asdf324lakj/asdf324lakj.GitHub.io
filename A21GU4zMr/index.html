@@ -18,7 +18,7 @@
      <div class="header">
       <div class="logo_title">
 		  
-        <div class="title animated fadeInDown"><img src="https://10086skynet.top/images/avatar.png?v=1676969217848"/>
+        <div class="title animated fadeInDown"><img src="https://10086skynet.top/images/avatar.png?v=1676973897137"/>
 
           <h1 title="NothingBlog" class="weaklink"><a href="/">NothingBlog</a>
 
@@ -178,6 +178,52 @@ alert("200")
 <ul>
 <li>sudo service bluetooth start</li>
 </ul>
+<p>- <strong>kali2022安装并切换java版本</strong></p>
+<ul>
+<li>https://www.oracle.com/java/technologies/downloads/#java8</li>
+<li>登录oracle共享账户并下载</li>
+<li>mv jdk-8u361-linux-x64.tar.gz /opt</li>
+<li>cd /opt</li>
+<li>tar -zxvf jdk-8u361-linux-x64.tar.gz</li>
+<li>vi /etc/profile 在最后一行添加<br>
+rt JAVA_HOME=/opt/jdk1.8.0_361<br>
+export CLASSPATH=.:<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi>J</mi><mi>A</mi><mi>V</mi><msub><mi>A</mi><mi>H</mi></msub><mi>O</mi><mi>M</mi><mi>E</mi></mrow><mi mathvariant="normal">/</mi><mi>l</mi><mi>i</mi><mi>b</mi><mi>e</mi><mi>x</mi><mi>p</mi><mi>o</mi><mi>r</mi><mi>t</mi><mi>P</mi><mi>A</mi><mi>T</mi><mi>H</mi><mo>=</mo></mrow><annotation encoding="application/x-tex">{JAVA_HOME}/lib
+export PATH=</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.09618em;">J</span><span class="mord mathdefault">A</span><span class="mord mathdefault" style="margin-right:0.22222em;">V</span><span class="mord"><span class="mord mathdefault">A</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.08125em;">H</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mord mathdefault" style="margin-right:0.10903em;">M</span><span class="mord mathdefault" style="margin-right:0.05764em;">E</span></span><span class="mord">/</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">i</span><span class="mord mathdefault">b</span><span class="mord mathdefault">e</span><span class="mord mathdefault">x</span><span class="mord mathdefault">p</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">t</span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mord mathdefault">A</span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span></span></span></span>{JAVA_HOME}/bin:$PATH</li>
+<li>source /etc/profile</li>
+<li>update-alternatives --install /usr/bin/java java /opt/jdk1.8.0_361/bin/java 1</li>
+<li>update-alternatives --install /usr/bin/javac javac /opt/jdk1.8.0_361/bin/javac 1</li>
+<li>update-alternatives --set java /opt/jdk1.8.0_361/bin/java</li>
+<li>update-alternatives --set javac /opt/jdk1.8.0_361/bin/javac</li>
+<li>update-alternatives --config java</li>
+<li>java -version</li>
+</ul>
+<p>- <strong>kali2022安装内核头</strong></p>
+<ul>
+<li>apt-get install linux-headers-$(uname -r)</li>
+</ul>
+<p>- <strong>kali2022安装输入法</strong></p>
+<ul>
+<li>apt-get install fcitx</li>
+<li>apt-get install fcitx-googlepinyin</li>
+<li>重启后才能正常打字（ctrl+空格）</li>
+</ul>
+<p>- <strong>kali2022安装截图工具</strong></p>
+<ul>
+<li>apt-get install shutter</li>
+<li>配置快捷键 命令shutter -s 开启截图</li>
+</ul>
+<p>- <strong>kali2022火狐firefox中文插件包</strong></p>
+<ul>
+<li>https://addons.mozilla.org/zh-CN/firefox/addon/chinese-simplified-zh-cn-la/</li>
+</ul>
+<p>- <strong>kali2022代理</strong></p>
+<ul>
+<li>https://github.com/v2fly/v2ray-core/releases/tag/v4.45.2</li>
+<li>https://github.com/Qv2ray/QvPlugin-Trojan/releases</li>
+<li>https://github.com/Qv2ray/Qv2ray/releases/tag/v2.7.0</li>
+<li>/root/.config/qv2ray/vcore/ 最高支持V2Ray 4.45.2</li>
+<li>mkdir -p home/.config/qv2ray/plugins 可添加插件QvPlugin-Trojan.v3.0.0.linux-x64.so</li>
+</ul>
 <p>- <strong>请各位小伙伴们，详细阅读公司网络使用注意事项。</strong></p>
 <ul>
 <li>近期服务部开展公司网络安全隐患检查，下列操作请注意。<br>
@@ -315,7 +361,7 @@ DNS1=114.114.114.114</li>
 </ul>
 <p>- <strong>后台运行命令</strong></p>
 <ul>
-<li>nohup command 2&gt;&amp;1 &amp;</li>
+<li>nohup command &gt; /dev/null 2&gt;&amp;1 &amp;</li>
 </ul>
 <p>- <strong>aa</strong></p>
 <ul>
