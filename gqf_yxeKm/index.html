@@ -18,7 +18,7 @@
      <div class="header">
       <div class="logo_title">
 		  
-        <div class="title animated fadeInDown"><img src="https://10086skynet.top/images/avatar.png?v=1677467419097"/>
+        <div class="title animated fadeInDown"><img src="https://10086skynet.top/images/avatar.png?v=1677469588243"/>
 
           <h1 title="NothingBlog" class="weaklink"><a href="/">NothingBlog</a>
 
@@ -299,6 +299,32 @@ java -XX:ParallelGCThreads=4 -XX:+AggressiveHeap -XX:+UseParallelGC -javaagent:C
 </audio>
 <p><audio autoplay><source src="http://22283.live.streamtheworld.com/UFM_1003AAC.aac" type="audio/mpeg"></audio>
 <p>下载地址：XXX<span style="color: #ffffff;"><a target="_blank" style="color: #ffffff;" href="https://baidu.com">*</a></span></p>
+
+<br>
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title></title>
+ <script language=Javascript> 
+  function time(){
+    //获得显示时间的div
+    t_div = document.getElementById('showtime');
+   var now=new Date()
+    //替换div内容 
+   t_div.innerHTML = "现在是"+now.getFullYear()
+    +"年"+(now.getMonth()+1)+"月"+now.getDate()
+    +"日"+now.getHours()+"时"+now.getMinutes()
+    +"分"+now.getSeconds()+"秒";
+    //等待一秒钟后调用time方法，由于settimeout在time方法内，所以可以无限调用
+   setTimeout(time,1000);
+  }
+</script>
+</head>
+<body  onload="time()">
+<div id="showtime"></div>
+</body>
+</html>
       </div>
 
 </div></div>
