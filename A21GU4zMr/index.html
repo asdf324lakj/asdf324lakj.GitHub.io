@@ -18,7 +18,7 @@
      <div class="header">
       <div class="logo_title">
 		  
-        <div class="title animated fadeInDown"><img src="https://10086skynet.top/images/avatar.png?v=1677663610731"/>
+        <div class="title animated fadeInDown"><img src="https://10086skynet.top/images/avatar.png?v=1677741086543"/>
 
           <h1 title="NothingBlog" class="weaklink"><a href="/">NothingBlog</a>
 
@@ -345,6 +345,19 @@ DNS1=114.114.114.114</li>
 <li>df -TH</li>
 <li>umount /dev/vdb</li>
 <li>mount /dev/vdb /home/</li>
+</ul>
+<p>- <strong>centos7.9部署masscan</strong></p>
+<ul>
+<li>yum install git gcc make libpcap-devel clang</li>
+<li>cd /opt</li>
+<li>git clone https://github.com/robertdavidgraham/masscan.git</li>
+<li>cd /masscan</li>
+<li>make</li>
+<li>vi /etc/profile<br>
+最后一行添加<br>
+PATH=/opt/masscan/bin:$PATH<br>
+export PATH</li>
+<li>source /etc/profile</li>
 </ul>
 <p>- <strong>Ubuntu 18.04.6部署Rocket.Chat</strong></p>
 <ul>
