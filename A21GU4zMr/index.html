@@ -18,7 +18,7 @@
      <div class="header">
       <div class="logo_title">
 		  
-        <div class="title animated fadeInDown"><img src="https://10086skynet.top/images/avatar.png?v=1680296841949"/>
+        <div class="title animated fadeInDown"><img src="https://10086skynet.top/images/avatar.png?v=1680297266696"/>
 
           <h1 title="NothingBlog" class="weaklink"><a href="/">NothingBlog</a>
 
@@ -358,12 +358,13 @@ DNS1=114.114.114.114</li>
 <p>- <strong>KVM扩容centos 7.9内存 cpu 磁盘</strong></p>
 <ul>
 <li>物理机下<br>
-virsh edit name<br>
-'''<br>
-<memory unit='KiB'>16777216</memory><br>
-<currentMemory unit='KiB'>16777216</currentMemory><br>
-<vcpu placement='static'>16</vcpu><br>
-'''</li>
+virsh edit name</li>
+</ul>
+<pre><code>&lt;memory unit='KiB'&gt;16777216&lt;/memory&gt;
+&lt;currentMemory unit='KiB'&gt;16777216&lt;/currentMemory&gt;
+&lt;vcpu placement='static'&gt;16&lt;/vcpu&gt;
+</code></pre>
+<ul>
 <li>物理机下进入qcow2存放目录<br>
 qemu-img resize name.qcow2 +100G</li>
 <li>虚拟机下<br>
