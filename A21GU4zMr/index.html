@@ -18,7 +18,7 @@
      <div class="header">
       <div class="logo_title">
 		  
-        <div class="title animated fadeInDown"><img src="https://10086skynet.top/images/avatar.png?v=1680123374831"/>
+        <div class="title animated fadeInDown"><img src="https://10086skynet.top/images/avatar.png?v=1680294605572"/>
 
           <h1 title="NothingBlog" class="weaklink"><a href="/">NothingBlog</a>
 
@@ -137,7 +137,7 @@
 
   <div class="post_details">
     <div class="info"><i class="fa fa-clock-o"></i>
-<span class="date_info">2023-01-18</span>
+<span class="date_info">2023-01-17</span>
 <i class="fa fa-eye"></i>
 
 
@@ -354,6 +354,36 @@ DNS1=114.114.114.114</li>
 <li>df -TH</li>
 <li>umount /dev/vdb</li>
 <li>mount /dev/vdb /home/</li>
+</ul>
+<p>- <strong>KVM扩容centos 7.9内存 cpu 磁盘</strong></p>
+<ul>
+<li>物理机下<br>
+virsh edit name<br>
+<memory unit='KiB'>16777216</memory><br>
+<currentMemory unit='KiB'>16777216</currentMemory><br>
+<vcpu placement='static'>16</vcpu></li>
+<li>物理机下进入qcow2存放目录<br>
+qemu-img resize name.qcow2 +100G</li>
+<li>虚拟机下<br>
+fdisk -l    获取到 磁盘名字 /dev/vda<br>
+fdisk /dev/vda<br>
+n<br>
+p<br>
+默认<br>
+w<br>
+fdisk /dev/vda<br>
+t<br>
+默认<br>
+8e<br>
+w<br>
+partprobe<br>
+pvcreate /dev/vda3<br>
+vgdisplay 获取到 VG Nmae 为 centos<br>
+vgextend centos /dev/vda3<br>
+vgdisplay<br>
+lvresize -L +100G /dev/centos/home<br>
+xfs_growfs /dev/mapper/centos-home<br>
+df -h</li>
 </ul>
 <p>- <strong>centos7.9部署masscan</strong></p>
 <ul>
