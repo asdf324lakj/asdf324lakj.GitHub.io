@@ -18,7 +18,7 @@
      <div class="header">
       <div class="logo_title">
 		  
-        <div class="title animated fadeInDown"><img src="https://10086skynet.top/images/avatar.png?v=1686174312095"/>
+        <div class="title animated fadeInDown"><img src="https://10086skynet.top/images/avatar.png?v=1692821993210"/>
 
           <h1 title="NothingBlog" class="weaklink"><a href="/">NothingBlog</a>
 
@@ -170,13 +170,16 @@ lsusb<br>
 apt install google-android-platform-tools-installer<br>
 adb devices<br>
 手机配合允许usb调试</p>
-<p>以下的 APP 是千万不能删<br>
+<p>以下的 APP 不能删<br>
 com.miui.cloudservice （小米云服务）<br>
 com.xiaomi.account （小米账户）<br>
 com.android.updater （系统更新）<br>
 com.miui.cloudbackup （云备份）<br>
-com.xiaomi.market （应用市场）</p>
-<p>开始优化<br>
+com.xiaomi.market （应用市场）<br>
+com.xiaomi.finddevice （查找手机）<br>
+com.lbe.security.miui （权限管理服务）<br>
+com.miui.securitycenter （手机管家）</p>
+<p>显示包列表<br>
 adb shell pm list packages</p>
 <p>ackage:com.xiaomi.cameratest<br>
 package:com.android.cts.priv.ctsshim<br>
@@ -520,8 +523,8 @@ adb shell am force-stop com.mipay.wallet<br>
 adb shell pm uninstall -k --user 0 com.mipay.wallet</p>
 <p>恢复误删<br>
 adb shell pm install-existing com.mipay.wallet</p>
+<p>提取apk安装包</p>
 <p>删除<br>
-com.miui.analytics<br>
 com.miui.systemAdSolution<br>
 com.miui.hybrid<br>
 com.miui.hybrid.accessory<br>
@@ -530,19 +533,22 @@ com.miui.personalassistant<br>
 com.miui.yellowpage<br>
 com.xiaomi.aiasst.service<br>
 com.miui.voiceassist<br>
+com.miui.voicetrigger<br>
 com.xiaomi.gamecenter.sdk.service<br>
 com.baidu.searchbox<br>
 com.miui.touchassistant<br>
 com.miui.bugreport<br>
 com.miui.miservice<br>
 com.android.browser<br>
-com.android.quicksearchbox</p>
+com.android.quicksearchbox<br>
+com.miui.mishare.connectivity</p>
 <p>停用<br>
+com.miui.analytics<br>
+com.mi.health<br>
 com.duokan.reader<br>
 com.xiaomi.gamecenter<br>
 com.miui.smarttravel<br>
-com.mfashiongallery.emag<br>
-com.mi.health</p>
+com.mfashiongallery.emag</p>
 </p>
 
      <p class="md_block">
