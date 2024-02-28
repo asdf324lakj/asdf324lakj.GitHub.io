@@ -18,7 +18,7 @@
      <div class="header">
       <div class="logo_title">
 		  
-        <div class="title animated fadeInDown"><img src="https://10086skynet.top/images/avatar.png?v=1701671500440"/>
+        <div class="title animated fadeInDown"><img src="https://10086skynet.top/images/avatar.png?v=1709087670662"/>
 
           <h1 title="NothingBlog" class="weaklink"><a href="/">NothingBlog</a>
 
@@ -137,7 +137,7 @@
 
   <div class="post_details">
     <div class="info"><i class="fa fa-clock-o"></i>
-<span class="date_info">2023-01-11</span>
+<span class="date_info">2023-01-09</span>
 <i class="fa fa-eye"></i>
 
 
@@ -172,7 +172,20 @@ alert("200")
 <p>- <strong>aa</strong></p>
 <ul>
 <li>aa</li>
-<li>aa</li>
+<li>aa<br>
+1</li>
+</ul>
+<p>- <strong>kali2022</strong></p>
+<ul>
+<li>Kali 1.0 基于 Debian Wheezy。 Kali 2.0 基于 Jessie。 Kali 滚动基于 Debian 测试。</li>
+<li>实时模式启动到 RAM，安装的 Kali 实例启动到存储设备。</li>
+<li>实时模式启动至 RAM，但可能会自动挂载磁盘。 取证模式不会自动安装驱动器。</li>
+<li>使用 mount命令验证是否未安装任何磁盘。 您还可以对系统的交换和磁盘设备进行 MD5，重新启动到取证模式并再次进行 MD5。 如果取证模式成功，MD5 哈希值应该匹配。 在您不关心“污染”的系统中尝试一下！</li>
+<li>请求添加工具的最佳方式是在 Kali Bug Tracker 中打开“新工具请求”票证。</li>
+<li>Kali 中一些很酷的功能，实时系统、取证模式、自定义 Linux 内核、完全可定制、默认禁用网络服务的可信操作系统、ARM 支持、预装安全工具、渗透测试平台！</li>
+<li>当您想要实现以下目的时，Kali Live 非常有用： 将 Kali 的便携式副本放在口袋里； 无需对计算机进行任何更改即可测试 Kali Linux； 需要启用取证模式。 使用 Kali live 作为任何类型的永久安装都是一个坏主意，特别是如果您希望保存更改（没有持久性！）或者启动计算机上的内存有限。</li>
+<li>Kali（和 Debian）ISO 是一个 isohybrid 。 构建 ISO 后， syslinux 实用程序会运行 isohybrid ISO 上的命令，将分区表添加到 ISO，同时仍保持其有效的 ISO 文件。</li>
+<li></li>
 </ul>
 <p>- <strong>kali2022安装使用vm</strong></p>
 <ul>
@@ -289,7 +302,7 @@ export PATH=</annotation></semantics></math></span><span class="katex-html" aria
 <li>docker ps -a</li>
 <li>docker start ID</li>
 <li>docker restart ID</li>
-<li>docker update --restart=always ID</li>
+<li>docker update --restart=always CONTAINER_ID</li>
 <li>docker exec it ID bash</li>
 </ul>
 <p>- <strong>centos 7.9离线安装docker</strong></p>
@@ -461,8 +474,117 @@ export PATH</li>
 <li>常见问题<br>
 https://help.offsec.com/hc/en-us/sections/360008126631-Proctored-Exams<br>
 https://help.offsec.com/hc/en-us/requests/new</li>
-<li>ss</li>
+</ul>
+<p>- <strong>确定设备的驱动程序和详细信息</strong></p>
+<ul>
+<li>sudo airmon-ng</li>
+<li>sudo lsusb -vv</li>
+</ul>
+<p>- **列出Driver参数 **</p>
+<ul>
+<li>sudo modinfo ath9k_htc</li>
+</ul>
+<p>- <strong>列出所有已加载的模块以及 每个模块的依赖关系</strong></p>
+<ul>
+<li>lsmod</li>
+</ul>
+<p>- <strong>加载 ath9k_htc 并禁用 闪烁 LED</strong></p>
+<ul>
+<li>sudo modprobe ath9k_htc blink=0</li>
+</ul>
+<p>- <strong>删除模块 依赖关系</strong></p>
+<ul>
+<li>sudo rmmod ath</li>
+<li>sudo rmmod ath9k_htc ath9k_common ath9k_hw ath</li>
+</ul>
+<p>- <strong>iw</strong></p>
+<ul>
+<li>sudo iwlist wlan0 frequency 显示可用的 频道/频率</li>
+<li>sudo iw list 显示详细信息 无线接口信息</li>
+<li>sudo iwconfig wlan1 检查频率/频道</li>
+<li>sudo iw dev wlan0 scan | grep SSID 解析 iw 列出可用的 SSID 扫描输出</li>
+<li>sudo iw dev wlan0 scan | egrep &quot;DS Parameter set|SSID:&quot; 列出可用的 SSID 和 通过解析 iw 扫描输出的通道</li>
+<li>sudo iw dev wlan0 interface add wlan0mon type monitor 添加单独的监视模式 接口，称为 wlan0mon，链接到 wlan0</li>
+<li>sudo ip link set wlan0mon up 启动新创建的 wlan0mon</li>
+<li>sudo iw dev wlan0mon info 从 iw 获取信息 监控模式界面</li>
+<li>sudo tcpdump -i wlan0mon 使用 tcpdump 测试监控模式</li>
+<li>sudo iw dev wlan0mon interface del 删除监控模式 VAP</li>
+<li>sudo iw reg get 获取监管域信息</li>
+<li>vi /etc/default/crda，填写 REGDOMAIN=US 更改或设置监管域</li>
+</ul>
+<p>- **rfkill **</p>
+<ul>
+<li>sudo rfkill list 列出RF模块</li>
+<li>sudo rfkill list 1 列出禁用的RF模块</li>
+<li>sudo rfkill block 1 禁用设备1</li>
+<li>sudo rfkill unblock 1 解锁设备1</li>
+<li>sudo rfkill block all  禁用所有无线设备</li>
+</ul>
+<p>- <strong>Aircrack-ng</strong></p>
+<ul>
+<li>sudo airmon-ng 显示状态 以及有关系统上无线接口的信息</li>
+<li>sudo airmon-ng check 检查网络管理器</li>
+<li>sudo airmon-ng check kill 终止影响网卡的其余进程</li>
+<li>sudo airmon-ng start wlan1 启用监控模式wlan1模式</li>
+<li>sudo airmon-ng stop wlan1 停用监控模式wlan1模式</li>
+<li>sudo airmon-ng start wlan1 3 启用监视器wlan1模式，通道 3</li>
+<li>sudo airmon-ng --verbose 输出关于系统和安装的无线网卡 详细信息</li>
+<li>sudo airmon-ng --debug 输出更多来自系统命令的详细信息</li>
+<li>sudo airodump-ng wlan1 -c 2 仅捕获通道 2 上的数据包</li>
+<li>sudo airodump-ng -c 3 --bssid 34:08:04:09:3D:38 -w cap1 wlan1 精准捕获数据包输出到 cap1 文件</li>
+<li>sudo airodump-ng --output-format csv,pcap wlan1 输出的文件扩展名</li>
+<li>sudo aireplay-ng -9 wlan1 注入测试</li>
+<li>sudo aireplay-ng -9 -e wifi名 -a 34:08:04:09:3D:38 wlan1 精准注入测试</li>
+<li>sudo aireplay-ng -9 -i wlan1 wlan0 卡对卡注入测试</li>
+<li>aircrack-ng -S CPU 上的基准测试</li>
+<li>sudo airdecap-ng -b 34:08:04:09:3D:38 opennet-01.cap 从捕获的文件中过滤其他 AP</li>
+<li>wget http://standards-oui.ieee.org/oui.txt<br>
+airgraph-ng -o Picture1_png -i dump-01.csv -g CAPR 输出客户端与 AP 关系图</li>
+<li>airgraph-ng -o Picture2.png -i dump-01.csv -g CPG 输出客户探针图</li>
+<li>grep -i password /usr/share/john/password.lst 列出包含以下内容的所有行 “密码”</li>
+<li>vi /etc/john/john.conf<br>
+JtR 添加两个修改规则<br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>[</mo><mn>0</mn><mo>−</mo><mn>9</mn><mo>]</mo></mrow><annotation encoding="application/x-tex">[0-9]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">9</span><span class="mclose">]</span></span></span></span>[0-9]<br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>[</mo><mn>0</mn><mo>−</mo><mn>9</mn><mo>]</mo></mrow><annotation encoding="application/x-tex">[0-9]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">9</span><span class="mclose">]</span></span></span></span>[0-9]$[0-9]</li>
+<li>john --wordlist=/usr/share/john/password.lst --rules --stdout | grep -i Password123 测试重整规则 JtR</li>
+<li>john --wordlist=/usr/share/john/password.lst --rules --stdout | aircrack-ng -e wifu -w - ~/wpa-01.cap 结合 JtR 修改规则和 通过管道将其连接到aircrack-ng</li>
+<li>crunch 8 9 生成单词列表 单词长度在 8 到 9 个字符之间的所有可打印字符</li>
+<li>crunch 8 9 abc123 用生成单词列表 字符集 abc123，单词长度在 8 到 9 个字符之间</li>
+<li>crunch 11 11 -t password%%% 生成 以密码开头、以四位数字结尾的单词列表</li>
+<li>crunch 11 11 0123456789 -t password@@@   生成 以“密码”开头并以四位数字结尾的单词列表 - 替代版本</li>
+<li>crunch 1 1 -p abcde12345 生成单词列表 使用“abcde12345”中的字符而不重复其中任何一个</li>
+<li>crunch 1 1 -p dog cat bird 生成 包含多个单词而不是字符的单词列表，不重复 他们</li>
+<li>crunch 5 5 -t ddd%% -p dog cat bird 成包含多个单词而不是字符的单词列表，无需 重复它们并添加两位数字</li>
+<li>crunch 5 5 aADE -t ddd@@ -p dog cat bird 生成 来自多个单词的非重复单词列表并添加两个字符 来自定义的字符集</li>
+<li>crunch 11 11 -t password%%% | aircrack-ng -e wifu crunch-01.cap -w -  将 Crunch mangling 与 通过管道将其连接到aircrack-ng</li>
+<li>echo bird &gt; wordlist.txt<br>
+echo cat &gt;&gt; wordlist.txt<br>
+echo dog &gt;&gt; wordlist.txt<br>
+rsmangler --file wordlist.txt<br>
+rsmangler --file wordlist.txt --output mangled.txt RSMangler 输出到文件</li>
+<li>cat wordlist.txt | rsmangler --file - 连接到 RSMangler 的单词列表</li>
+<li>rsmangler --file wordlist.txt --min 12 --max 13 用修改单词列表 RSManger 并限制为 12-13 个字符</li>
+<li>rsmangler --file wordlist.txt --min 12 --max 13 | aircrack-ng -e wifu rsmangler-01.cap -w - 组合 RSMangler 重整 并将其通过管道传输到 Aircrack-ng</li>
 <li></li>
+</ul>
+<p>1<br>
+- <strong>aa</strong></p>
+<ul>
+<li>aa</li>
+<li>aa<br>
+1<br>
+- <strong>aa</strong></li>
+<li>aa</li>
+<li>aa<br>
+1<br>
+- <strong>aa</strong></li>
+<li>aa</li>
+<li>aa<br>
+1<br>
+- <strong>aa</strong></li>
+<li>aa</li>
+<li>aa<br>
+1</li>
 </ul>
 </p>
 

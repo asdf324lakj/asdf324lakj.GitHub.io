@@ -7,7 +7,7 @@
         <meta content="telephone=no" name="format-detection"/>
         <meta name="renderer" content="webkit">
         <meta http-equiv="refresh" content="1800">
-    <title>miui | NothingBlog</title>
+    <title>IOT | NothingBlog</title>
 <link href="https://10086skynet.top/styles/main.css" type="text/css" rel="stylesheet"/>
 <script type="text/javascript" src="https://10086skynet.top/media/scripts/jquery.js"></script>
 <script type="text/javascript" src="https://10086skynet.top/media/scripts/basic.js"></script>
@@ -18,7 +18,7 @@
      <div class="header">
       <div class="logo_title">
 		  
-        <div class="title animated fadeInDown"><img src="https://10086skynet.top/images/avatar.png?v=1701671500440"/>
+        <div class="title animated fadeInDown"><img src="https://10086skynet.top/images/avatar.png?v=1709087670662"/>
 
           <h1 title="NothingBlog" class="weaklink"><a href="/">NothingBlog</a>
 
@@ -128,7 +128,7 @@
 
 <div class="post">
   <div class="post_title sm_margin">
-    <h2><a>miui</a>
+    <h2><a>IOT</a>
 
 
 
@@ -137,7 +137,7 @@
 
   <div class="post_details">
     <div class="info"><i class="fa fa-clock-o"></i>
-<span class="date_info">2023-04-05</span>
+<span class="date_info">2023-04-02</span>
 <i class="fa fa-eye"></i>
 
 
@@ -160,6 +160,37 @@
     <span class="md_line md_line_start md_line_end"><p>https://developer.android.google.cn/studio/command-line/adb?hl=zh-cn</p>
 <p>https://developer.android.google.cn/studio/releases/platform-tools?hl=zh-cn</p>
 <p>设置－我的设备－全部参数（多次点击）－开发者选项－usb调试开启－miui优化关闭</p>
+<p>- <strong>zxic开启adb去云控</strong></p>
+<ul>
+<li>http://192.168.0.1/goform/goform_set_cmd_process?goformId=SET_DEVICE_MODE&amp;debug_enable=1</li>
+<li>adb shell</li>
+<li>nv show</li>
+<li>nv set MAX_Access_num=99</li>
+<li>nv set root_Password=123456</li>
+<li>nv save</li>
+</ul>
+<p>- <strong>zxic获取切卡密码</strong></p>
+<ul>
+<li>http://192.168.0.1/goform/goform_get_cmd_process?cmd=unlock_network_code</li>
+</ul>
+<p>- <strong>zxic后台隐藏功能</strong></p>
+<ul>
+<li>f12后 在控制台的》后 输入 $(&quot;*&quot;).show();  回车确认</li>
+<li>DDNS  http://192.168.0.1/index.html#dynamic_dns</li>
+<li>频段设置  http://192.168.0.1/index.html#band_selection</li>
+<li>TR069  http://192.168.0.1/index.html#tr069</li>
+<li>内部虚拟网VPN  http://192.168.0.1/index.html#vpn</li>
+<li>家长控制  http://192.168.0.1/index.html#child_ctl</li>
+<li>USSD  http://192.168.0.1/index.html#usat</li>
+<li>DMZ设置  http://192.168.0.1/index.html#demilitarized_zone</li>
+</ul>
+<p>- <strong>zxic切卡改串</strong></p>
+<ul>
+<li>切卡密码  BJadmin1234、az952#、778899、UFIadmin1234、IMEI后6位加999</li>
+<li>在调试输入 AT+ZMODE=1 发送，显示 OK 就重启设备</li>
+<li>重启后在调试输入 AT+MODIMEI=123456</li>
+<li>重启后在调试输入 AT+MODSN=123456</li>
+</ul>
 <p>win下<br>
 用户变量和系统变量的path都添加<br>
 C:\cookie\1\miui\platform-tools_r34.0.1-windows\platform-tools<br>
