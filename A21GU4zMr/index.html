@@ -18,7 +18,7 @@
      <div class="header">
       <div class="logo_title">
 		  
-        <div class="title animated fadeInDown"><img src="https://10086skynet.top/images/avatar.png?v=1709238878558"/>
+        <div class="title animated fadeInDown"><img src="https://10086skynet.top/images/avatar.png?v=1709242622220"/>
 
           <h1 title="NothingBlog" class="weaklink"><a href="/">NothingBlog</a>
 
@@ -137,7 +137,7 @@
 
   <div class="post_details">
     <div class="info"><i class="fa fa-clock-o"></i>
-<span class="date_info">2023-01-08</span>
+<span class="date_info">2023-01-07</span>
 <i class="fa fa-eye"></i>
 
 
@@ -469,7 +469,8 @@ export PATH</li>
 <li>监考手册 https://help.offsec.com/hc/en-us/articles/360050299352</li>
 <li>监考平台 https://proctoring.offensive-security.com/student/login</li>
 <li>OSID和MD5（考前一天通过邮件接收） proctoring@offensive-security.com</li>
-<li>考试指南 https://help.offsec.com/hc/en-us/articles/360059125211</li>
+<li>klcp考试指南 https://help.offsec.com/hc/en-us/articles/360059125211</li>
+<li>oswp考试指南https://help.offsec.com/hc/en-us/articles/360046904731</li>
 <li>考点 https://www.classmarker.com/</li>
 <li>常见问题<br>
 https://help.offsec.com/hc/en-us/sections/360008126631-Proctored-Exams<br>
@@ -523,28 +524,28 @@ https://help.offsec.com/hc/en-us/requests/new</li>
 </ul>
 <p>- <strong>Aircrack-ng</strong></p>
 <ul>
-<li>sudo airmon-ng 显示状态 以及有关系统上无线接口的信息</li>
-<li>sudo airmon-ng check 检查网络管理器</li>
-<li>sudo airmon-ng check kill 终止影响网卡的其余进程</li>
-<li>sudo airmon-ng start wlan1 启用监控模式wlan1模式</li>
-<li>sudo airmon-ng stop wlan1 停用监控模式wlan1模式</li>
-<li>sudo airmon-ng start wlan1 3 启用监视器wlan1模式，通道 3</li>
-<li>sudo airmon-ng --verbose 输出关于系统和安装的无线网卡 详细信息</li>
-<li>sudo airmon-ng --debug 输出更多来自系统命令的详细信息</li>
-<li>sudo airodump-ng wlan1 -c 2 仅捕获通道 2 上的数据包</li>
-<li>sudo airodump-ng -c 3 --bssid 34:08:04:09:3D:38 -w cap1 wlan1 精准捕获数据包输出到 cap1 文件</li>
-<li>sudo airodump-ng --output-format csv,pcap wlan1 输出的文件扩展名</li>
-<li>sudo aireplay-ng -9 wlan1 注入测试</li>
-<li>iwconfig wlan1 channel 10 接入点和无线网卡锁定在10信道上</li>
-<li>sudo aireplay-ng -9 -e wifi名 -a 34:08:04:09:3D:38 wlan1 精准注入测试</li>
+<li>显示状态 以及有关系统上无线接口的信息 sudo airmon-ng</li>
+<li>检查网络管理器 sudo airmon-ng check</li>
+<li>终止影响网卡的其余进程 sudo airmon-ng check kill</li>
+<li>启用监控模式wlan1模式 sudo airmon-ng start wlan1</li>
+<li>停用监控模式wlan1模式 sudo airmon-ng stop wlan1</li>
+<li>启用监视器wlan1模式，通道 3 sudo airmon-ng start wlan1 3</li>
+<li>输出关于系统和安装的无线网卡 详细信息 sudo airmon-ng --verbose</li>
+<li>输出更多来自系统命令的详细信息 sudo airmon-ng --debug</li>
+<li>仅捕获通道 2 上的数据包 sudo airodump-ng wlan1 -c 2</li>
+<li>精准捕获数据包输出到 cap1 文件 sudo airodump-ng -c 3 --bssid 34:08:04:09:3D:38 -w cap1 wlan1</li>
+<li>输出的文件扩展名 sudo airodump-ng --output-format csv,pcap wlan1</li>
+<li>注入测试 sudo aireplay-ng -9 wlan1</li>
+<li>接入点和无线网卡锁定在10信道上 iwconfig wlan1 channel 10</li>
+<li>精准注入测试 sudo aireplay-ng -9 -e wifi名 -a 34:08:04:09:3D:38 wlan1</li>
 <li>sudo aireplay-ng -0 1 -a MAC地址（bssid） -c ESSID  wlan1</li>
-<li>sudo aireplay-ng -9 -i wlan1 wlan0 卡对卡注入测试</li>
-<li>aircrack-ng -S CPU 上的基准测试</li>
-<li>sudo airdecap-ng -b 34:08:04:09:3D:38 opennet-01.cap 从捕获的文件中过滤其他 AP</li>
+<li>卡对卡注入测试 sudo aireplay-ng -9 -i wlan1 wlan0</li>
+<li>CPU 上的基准测试 aircrack-ng -S</li>
+<li>从捕获的文件中过滤其他 AP sudo airdecap-ng -b 34:08:04:09:3D:38 opennet-01.cap</li>
 <li>wget http://standards-oui.ieee.org/oui.txt<br>
-airgraph-ng -o Picture1_png -i dump-01.csv -g CAPR 输出客户端与 AP 关系图</li>
-<li>airgraph-ng -o Picture2.png -i dump-01.csv -g CPG 输出客户探针图</li>
-<li>grep -i password /usr/share/john/password.lst 列出包含以下内容的所有行 “密码”</li>
+输出客户端与 AP 关系图 airgraph-ng -o Picture1_png -i dump-01.csv -g CAPR</li>
+<li>输出客户探针图 airgraph-ng -o Picture2.png -i dump-01.csv -g CPG</li>
+<li>列出包含以下内容的所有行 “密码” grep -i password /usr/share/john/password.lst</li>
 <li>vi /etc/john/john.conf<br>
 JtR 添加两个修改规则<br>
 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>[</mo><mn>0</mn><mo>−</mo><mn>9</mn><mo>]</mo></mrow><annotation encoding="application/x-tex">[0-9]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">9</span><span class="mclose">]</span></span></span></span>[0-9]<br>
@@ -641,16 +642,54 @@ password:123456<br>
 提取asleep后面的字符串</li>
 <li>跑asleep后面的字符串获取明文密码 asleep -C xxxxxxx -W /usr/share/john/password.lst</li>
 <li>查看credout文件 cat /tmp/hostapd.credout</li>
-<li>手动连接<br>
+<li>手动连接  wpa_supplicant -c <config file><br>
 前台连接 sudo wpa_supplicant -i wlan0 -c wifi-client.conf<br>
 后台连接 sudo wpa_supplicant -i wlan0 -c wifi-client.conf -B<br>
+sudo dhclient wlan0<br>
+连接到WPA/WPA2企业的wifi-client.conf<br>
+network={<br>
+ssid=&quot;NetworkName&quot;<br>
+scan_ssid=1<br>
+key_mgmt=WPA-EAP<br>
+identity=&quot;Domain\username&quot;<br>
+password=&quot;password&quot;<br>
+eap=PEAP<br>
+phase1=&quot;peaplabel=0&quot;<br>
+phase2=&quot;auth=MSCHAPV2&quot;<br>
+}</li>
+</ul>
+<p>- <strong>WEP网络</strong></p>
+<ul>
+<li>终止冲突进程 sudo airmon-ng check kill</li>
+<li>启动监控模式 sudo airmon-ng start wlan0</li>
+<li>扫描 WEP 网络 sudo airodump-ng wlan0mon --encrypt WEP</li>
+<li>捕获 besside-ng -c Channel -b BSSID wlan0mon</li>
+<li>破解WEP密钥 aircrack-ng ./wep.cap</li>
+<li>手动连接<br>
+sudo iwconfig wlan0 essid <SSID> key s:<KEY><br>
 sudo dhclient wlan0</li>
 </ul>
-<p>连接到wep的wifi-client.conf<br>
+<p>连接到WEP的wifi-client.conf<br>
 network={<br>
 ssid=&quot;hotel_wifi&quot;<br>
 scan_ssid=1<br>
 }</p>
+<p>- ** MAC 过滤的开放网络**</p>
+<ul>
+<li>抓包 airodump-ng -w &lt;CAPTURE_NAME&gt; -c <CHANNEL> --bssid <BSSID> <INTERFACE></li>
+<li>获取MAC 地址 macchanger --show <INTERFACE></li>
+<li>虚假身份验证攻击 aireplay-ng -1 0 -e <ESSID> -a <BSSID> -h &lt;YOUR_MAC&gt; <INTERFACE></li>
+<li>ARP重放攻击 aireplay-ng -3 -b <BSSID> -h &lt;YOUR_MAC&gt; <INTERFACE></li>
+<li>取消认证攻击 aireplay-ng -0 1 -a <BSSID> -c &lt;CLIENT_MAC&gt; <INTERFACE><br>
+-破解密码 aircrack-ng &lt;CAPTURE_NAME&gt;</li>
+</ul>
+<p>- <strong>WPA/WPA2网络</strong></p>
+<ul>
+<li>sudo airmon-ng check kill</li>
+<li>sudo airodump-ng wlan0</li>
+<li>sudo airodump-ng -c 目标AP的信道 -w 保存数据包的文件名 wlan0</li>
+<li>sudo aireplay-ng -a 目标AP的mac地址  -0  4 wlan0</li>
+</ul>
 <p>连接到WPA-PSK 的wifi-client.conf<br>
 network={<br>
 ssid=&quot;home_network&quot;<br>
@@ -664,6 +703,10 @@ key_mgmt=WPA-PSK<br>
 <li>source /usr/share/airgeddon/known_pins.db</li>
 <li>检查数据库中 BSSID 开头的 AP “0013F7”<br>
 echo ${PINDB[&quot;0013F7&quot;]}</li>
+<li>识别启用了 WPS 的接入点  wash -i <INTERFACE> -s</li>
+<li>虚假身份验证攻击 aireplay-ng -1 0 -e <ESSID> -a <BSSID> -h &lt;YOUR_MAC&gt; <INTERFACE></li>
+<li>离线暴力破解 reaver -i wlan0 -b BSSID -SNLAvv  -c 1 -K</li>
+<li>在线暴力破解 reaver -i <INTERFACE> -b <BSSID> -SNLAsvv -d 1 -r 5:3 -c &lt;CHANNEL_NUMBER&gt;</li>
 </ul>
 <p>- <strong>screen</strong></p>
 <ul>
@@ -671,12 +714,20 @@ echo ${PINDB[&quot;0013F7&quot;]}</li>
 <li>创建cmd但不接入 screen -S Hello -d -m</li>
 <li>进入某个cmd screen -r Hello</li>
 <li>从某个cmd切出来 Ctrl+a+d</li>
-<li>杀死某个cmd screen -r Hello -X quit<br>
-1<br>
-- <strong>aa</strong></li>
-<li>aa</li>
-<li>aa<br>
-1</li>
+<li>杀死某个cmd screen -r Hello -X quit</li>
+</ul>
+<p>- <strong>ssh</strong></p>
+<ul>
+<li>ssh <username>@&lt;target_ip&gt; -p <port></li>
+</ul>
+<p>- <strong>备忘单</strong></p>
+<ul>
+<li>https://liodeus.github.io/2020/10/29/OSWP-personal-cheatsheet.html?source=post_page-----2a1476233484--------------------------------</li>
+<li>https://github.com/alenperic/OSWP-Study-Guide</li>
+</ul>
+<p>- <strong>重启网络管理器</strong></p>
+<ul>
+<li>systemctl restart NetworkManager.service</li>
 </ul>
 </p>
 
