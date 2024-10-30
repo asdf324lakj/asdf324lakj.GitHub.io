@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://10086skynet.top</id>
     <title>NothingBlog</title>
-    <updated>2024-07-15T02:09:45.594Z</updated>
+    <updated>2024-10-30T20:30:03.770Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://10086skynet.top"/>
     <link rel="self" href="https://10086skynet.top/atom.xml"/>
@@ -10,6 +10,20 @@
     <logo>https://10086skynet.top/images/avatar.png</logo>
     <icon>https://10086skynet.top/favicon.ico</icon>
     <rights>All rights reserved 2024, NothingBlog</rights>
+    <entry>
+        <title type="html"><![CDATA[牙膏]]></title>
+        <id>https://10086skynet.top/kK1orXhO6b/</id>
+        <link href="https://10086skynet.top/kK1orXhO6b/">
+        </link>
+        <updated>2024-10-29T03:00:39.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[食物黑名单]]></title>
+        <id>https://10086skynet.top/J7ecgjQAu/</id>
+        <link href="https://10086skynet.top/J7ecgjQAu/">
+        </link>
+        <updated>2024-08-03T23:06:33.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[IOT]]></title>
         <id>https://10086skynet.top/NHOX78vvu/</id>
@@ -58,19 +72,5 @@
         <link href="https://10086skynet.top/Q19oe1N1jv/">
         </link>
         <updated>2022-10-27T00:18:19.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[应急响应工程师]]></title>
-        <id>https://10086skynet.top/MSXROAjPE/</id>
-        <link href="https://10086skynet.top/MSXROAjPE/">
-        </link>
-        <updated>2022-09-15T02:54:15.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[CS配置]]></title>
-        <id>https://10086skynet.top/gqf_yxeKm/</id>
-        <link href="https://10086skynet.top/gqf_yxeKm/">
-        </link>
-        <updated>2022-08-17T13:47:29.000Z</updated>
     </entry>
 </feed>
