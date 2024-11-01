@@ -18,7 +18,7 @@
      <div class="header">
       <div class="logo_title">
 		  
-        <div class="title animated fadeInDown"><img src="https://10086skynet.top/images/avatar.png?v=1730321174947"/>
+        <div class="title animated fadeInDown"><img src="https://10086skynet.top/images/avatar.png?v=1730498458572"/>
 
           <h1 title="NothingBlog" class="weaklink"><a href="/">NothingBlog</a>
 
@@ -137,7 +137,7 @@
 
   <div class="post_details">
     <div class="info"><i class="fa fa-clock-o"></i>
-<span class="date_info">2021-08-07</span>
+<span class="date_info">2021-08-06</span>
 <i class="fa fa-eye"></i>
 
 
@@ -173,6 +173,36 @@ https://plugins.nessus.org/v2/nessus.php?f=all-2.0.tar.gz&amp;u=XXX&amp;p=XXX<br
 5.替换自己的账号和密码，只能用一次，注意下载时不要中断。<br>
 访问成功后，浏览器自动下载名为 all-2.0.tar.gz 的插件。<br>
 6.更新插件方法：根目录下 ./nessus-plugins-update all-2.0.tar.gz</p>
+<p>旧版本nessus数据迁移<br>
+mkdir ~/nessus_data<br>
+docker stop ramisec_nessus<br>
+docker cp ramisec_nessus:/opt/nessus/var/nessus/ ~/nessus_data<br>
+docker rm ramisec_nessus<br>
+docker run -itd --name=ramisec_nessus -v ~/nessus_data/nessus/:/opt/nessus/var/nessus/ -p 8834:8834 ramisec/nessus<br>
+重新更新插件</p>
+<p>新nessus<br>
+1.docker run -itd --name=ramisec_nessus -p 8834:8834 ramisec/nessus<br>
+2.进入docker容器：<br>
+docker exec -it ramisec_nessus bash<br>
+3.cd /opt/nessus/sbin<br>
+4.nessuscli lsuser<br>
+5.修改：<br>
+./nessuscli chpasswd admin<br>
+./nessuscli fix --set send_telemetry=no<br>
+./nessuscli fix --set auto_update_delay=no<br>
+./nessuscli fix --set auto_update=no<br>
+./nessuscli fix --set auto_update_ui=no<br>
+./nessuscli fix --set report_crashes=no<br>
+6.通过临时邮箱获取激活码：<br>
+https://tenable.com/products/nessus/nessus-essentials<br>
+7.通过相同格式的机器码aaaaaa11b2222cc33d44e5f6666a777b8cc99912和激活码获取https://plugins.nessus.org/v2/nessus.php?f=all-2.0.tar.gz&amp;u=XXXXX<br>
+https://plugins.nessus.org/v2/offline.php<br>
+8.更新插件：<br>
+docker exec -it ramisec_nessus /bin/bash  -c &quot;/nessus/update.sh https://plugins.nessus.org/v2/nessus.php?f=all-2.0.tar.gz&amp;u=XXXXX&quot;</p>
+<p>URL: https://server_ip:8834/#/<br>
+UserName:admin<br>
+PassWord:twitter@Elliot58616851<br>
+PassWord:github/elliot-bia/nessus</p>
 <p>docker_Awvs_Web<br>
 bash &lt;(curl -sLk https://www.fahai.org/aDisk/Awvs/check.sh) xrsec/awvs:preview</p>
 <p>URL: https://server_ip:3443/#/login<br>
@@ -333,24 +363,6 @@ check
 logs
 clean
 </code></pre>
-<p>拉取<br>
-docker run -itd --name=ramisec_nessus -p 8834:8834 ramisec/nessus<br>
-创建目录<br>
-mkdir ~/nessus_data<br>
-停止容器<br>
-docker stop ramisec_nessus<br>
-拷贝数据<br>
-docker cp ramisec_nessus:/opt/nessus/var/nessus/ ~/nessus_data<br>
-删除旧容器<br>
-docker rm ramisec_nessus<br>
-开新容器<br>
-docker run -itd --name=ramisec_nessus -v ~/nessus_data/nessus/:/opt/nessus/var/nessus/ -p 8834:8834 ramisec/nessus<br>
-更新插件<br>
-docker exec -it ramisec_nessus /bin/bash /nessus/update.sh</p>
-<p>URL: https://server_ip:8834/#/<br>
-UserName:admin<br>
-PassWord:twitter@Elliot58616851<br>
-PassWord:github/elliot-bia/nessus</p>
 </p>
 
      <p class="md_block">
